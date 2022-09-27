@@ -45,12 +45,10 @@ const Controller = () => {
     mobile: loginMobile,
     password: loginPassword
   };
-  console.log(loginData);
 
   const loginHandler = () => {
     axios.post('http://localhost:4000/login', loginData)
     .then(data => {
-      console.log(data)
       if(data.data.length === 2){
         setLoginStatus("Success");
         setUserInfo({name: data.data[0].user_name});
